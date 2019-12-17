@@ -6,7 +6,7 @@ $(document).ready(function(){
             month = $('#months').val(),
             int = $('#interest').val(),
             years = $('#years').val(),
-            down = $('#down').val(),
+            down = $('#down').val(), 
             amount = parseInt(loan),
             months = parseInt(month),
             down = parseInt(down),

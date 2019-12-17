@@ -1,40 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./style.css" >
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="calc">
-            <div class="header">
-              
+
+<head>
+    <title>Finance-Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet/less" type="text/css" href="./style.less" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+</head>
+
+<body class="bg-dark">
+    <div class="container-fluid">
+        <div class="main-panel">
+            <div class="container">
+                    <h1 class="title">Auto Loan Calculator<small> ( Finance )</small></h1>
+                <div class="row">
+                        
+                    <div class="calc-board">
+                            <form>
+                                    
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">loan amount</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="amount" name="amount" placeholder="Loan Amount">
+                                    </div>
+            
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">months</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="months" placeholder="Months">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">years</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="years" placeholder="Years">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Interest Rate</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="interest" placeholder="Interest Rate">
+                                    </div>
+            
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Down Payment</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="down" name="down" placeholder="Down Payment">
+                                    </div>
+                                    <button type="button" class="btn btn-success" id="calc">Calculate</button>
+                                </form>
+                                <table class="table table-dark table-striped">
+                                        <thead>
+                                          <tr>
+                                            <th>Name</th>
+                                            <th>value</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                           
+                                          </tr>
+                                          <tr>
+                                            <td>Mary</td>
+                                            <td>Moe</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td>July</td>
+                                            <td>Dooley</td>
+                                           
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                    </div>
+
+
+                </div>
+                
+                        <div class="jumbotron">
+                                <h1>Bootstrap Tutorial</h1>
+                                <p>Bootstrap is the most popular HTML, CSS...</p>
+                            </div>
+                
             </div>
-            <h1>Auto Loan Calculator</h1>
-              <p>
-                  <input type="text" id="amount" name="amount" placeholder="Loan Amount">
-                  <label for="amount" class="fa fa-usd"></label>
-              </p>
-              <p>
-                  <input type="text" id="months" placeholder="Months">
-                <label for="amount" class="fa fa-calendar"></label>
-              </p>
-              <p>
-                  <input type="text" id="years" placeholder="Years">
-                <label for="amount" class="fa fa-calendar"></label>
-              </p>
-              <p>
-                  <input type="text" id="interest" placeholder="Interest Rate">
-                  <label for="amount" class="fa interest"></label>
-              </p>
-             <p>
-                  <input type="text" id="down" placeholder="Down Payment">
-                  <label for="amount" class="fa fa-arrow-down"></label>
-              </p>
-              <p>
-                  <button id="calc" class="btn" >Calculate</button>
-              </p>
-              <p id="output">Monthly Payment</p>
-          </div>
-          <script type="text/javascript" src="./calc.js"></script>
-    </body>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="./calc.js"></script>
+</body>
+
 </html>
