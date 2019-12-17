@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Finance-Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,86 +22,167 @@
     <div class="container-fluid">
         <div class="main-panel">
             <div class="container">
-                    <h1 class="title">Auto Loan Calculator<small> ( Finance )</small></h1>
-                <div class="row">
-                        
-                    <div class="calc-board">
-                            <form>
-                                    
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">loan amount</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="amount" name="amount" placeholder="Loan Amount">
-                                    </div>
-            
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">months</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="months" placeholder="Months">
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">years</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="years" placeholder="Years">
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Interest Rate</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="interest" placeholder="Interest Rate">
-                                    </div>
-            
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Down Payment</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="down" name="down" placeholder="Down Payment">
-                                    </div>
-                                    <button type="button" class="btn btn-success" id="calc">Calculate</button>
-                                </form>
-                                <table class="table table-dark table-striped">
-                                        <thead>
-                                          <tr>
-                                            <th>Name</th>
-                                            <th>value</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                           
-                                          </tr>
-                                          <tr>
-                                            <td>Mary</td>
-                                            <td>Moe</td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <td>July</td>
-                                            <td>Dooley</td>
-                                           
-                                          </tr>
-                                        </tbody>
-                                      </table>
+                
+                <div class="jumbotron">
+                    <h1>Bankrate Calculator <span class="badge badge-secondary">UPWORK</span></h1>
+                    <br>
+                    <p>
+                        <b>How it Works?</b> <br>
+                        <ul>
+                            <li>Here the loan amount is calculated based on 'Type of Customer'</li>
+                            <li>Remortgage - is you take another loan (2nd loan) on the same property.</li>
+                            <li>Repayment - is paying back the entire loan</li>
+                            <li>Interest Only -  is a loan in which the borrower pays only the interest for some or all of the term, with the principal balance unchanged during the interest-only period.</li>
+                            <li>In type of customer tab, we select the type based on the drop down list</li>
+                            <li>Repayment type defines complete repayment or interest only</li>
+                            <li>Property Value is the value you need to feed in manually</li>
+                            <li>Deposit amount is the prepayment if any</li>
+                            <li>Net Property Value will be calculated automatically, Property Value - Deposit Amount</li>
+                            <li>Mortgage term you need to feed manually in number of years</li>
+                            <li>Initial Interest Rate, is the rate you put manually</li>
+                        </ul> 
+                    </p>
+                    <div class="media border p-3">
+                        <img src="me.png" alt="Alexander maximyuk" class="mr-3 rounded-circle" style="width:60px;">
+                        <div class="media-body">
+                            <h4>Alexander maximyuk <small><i>Posted on December 17, 2019</i></small></h4>
+                            <p>I have completed it for 4 hrs from the start to the end including Jtesting module</p>
+                        </div>
                     </div>
-
-
                 </div>
-                
-                        <div class="jumbotron">
-                                <h1>Bootstrap Tutorial</h1>
-                                <p>Bootstrap is the most popular HTML, CSS...</p>
+                <div class="alert alert-warning alert-dismissible ">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Warning!</strong> Negative value is not allowed.
+                </div>
+                <div class="row">
+                    <div class="calc-board col-lg-4 col-md-4 col-sm-12">
+                        <form id="calcForm">
+                            <div class="form-group">
+                                <label for="customerType">Type of Customer</label>
+                                <select class="form-control" id="customerType" name="customerType">
+                                    <option>I am first time player</option>
+                                    <option>I am remortgaging</option>
+                                    <option>I am moving house</option>
+                                </select>
                             </div>
-                
+
+                            <div class="form-group">
+                                <label for="repaymentType">Repayment Type</label>
+                                <select class="form-control" id="repaymentType" name="repaymentType">
+                                    <option>Repayment</option>
+                                    <option>Interest only</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="propertyValue">Property Value <span class="badge badge-danger"><small>Required</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="propertyValue" name="propertyValue" placeholder="property value" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deposit">Deposit Amount <span class="badge badge-danger"><small>Required</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="deposit" name="deposit" placeholder="deposit amount" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="netValue">Net Property Value <span class="badge badge-warning"><small>Passive</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="netValue" name="amount"
+                                        placeholder="net property value" disabled>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="years">Mortgage Term <span class="badge badge-danger"><small>Required</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="years" placeholder="Mortgage Term" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">yy</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="months">Mortgage Term <small>( Months )</small> <span class="badge badge-warning"><small>Passive</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="months" placeholder="Months" disabled>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">mm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="compounding">Compounding Period Per Year <span class="badge badge-warning"><small>Passive</small></span></label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="compounding"
+                                        placeholder="compounding period per year" disabled>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">mm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interest">Initial Interest Rate <span class="badge badge-danger"><small>Required</small></span></label>
+                                <div class="input-group mb-3"> 
+                                    <input type="text" class="form-control" id="interest"
+                                        placeholder="Initial Interest Rate" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success" id="calc">Calculate</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="result-board  col-lg-6 col-md-6 col-sm-12">
+                            <table class="table table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monthly Mortgage Payment</td>
+                                        <td id="monthlyPayment"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Mortgage Cost <span class="badge badge-info"><small>With interest</small></span></td>
+                                        <td id="totalCost"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loan to Value <span class="badge badge-info"><small>LTV</small></span></td>
+                                        <td id="ltv"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Mortgage Cost <span class="badge badge-info"><small>In interest Only Case</small></span></td>
+                                        <td id="totalMortgage"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
             </div>
         </div>
-
     </div>
     <script type="text/javascript" src="./calc.js"></script>
 </body>
-
 </html>
